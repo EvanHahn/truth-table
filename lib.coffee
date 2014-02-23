@@ -21,10 +21,11 @@ module.exports = (variables, expressions) ->
     _(variables.length).times (m) ->
       andWith = Math.pow(2, m)
       vars.push((n & andWith) != 0)
+    vars.reverse()
 
     answers = expressions.map (e) -> e.apply(this, vars)
 
-    row = vars.concat(answers)
+    row = vars.concat(answers).map (val) -> if val then 'T' else 'F'
     table.push(row)
 
   console.log(table.toString())
