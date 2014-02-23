@@ -1,9 +1,16 @@
 _ = require 'lodash'
 Table = require 'cli-table'
+functionToString = require 'function-to-string'
 
 module.exports = (variables, expressions) ->
 
-  expressionStrings = expressions.map (e) -> e.toString()
+  expressionStrings = expressions.map (e) ->
+    parsed = functionToString(e)
+    cleanedBody = parsed.body.replace(/\s/g, '')
+    cleanedBody = cleanedBody.replace(/^return/g, '')
+    cleanedBody = cleanedBody.replace(/;$/g, '')
+    return cleanedBody
+
   table = new Table
     head: variables.concat expressionStrings
 

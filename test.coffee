@@ -1,7 +1,7 @@
 table = require './lib'
 
 table ['P', 'Q'], [
-  (p, q) -> (!p) or q
-  (p, q) -> !((!q) or p)
-  (p, q) -> ((!p) or q) == !((!q) or p)
+  (P, Q) -> (!P) or Q
+  (P, Q) -> !((!Q) or P)
+  (P, Q) -> ((!P) or Q) == !((!Q) or P)
 ]
