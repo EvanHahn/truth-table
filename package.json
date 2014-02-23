@@ -1,4 +1,8 @@
 {
+  "name": "make-truth-tables",
+  "author": "Evan Hahn",
+  "private": true,
+  "version": "0.1.0",
   "dependencies": {
     "cli-table": "0.3.x",
     "lodash": "2.4.x",
