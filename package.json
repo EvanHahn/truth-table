@@ -3,7 +3,11 @@
   "author": "Evan Hahn",
   "private": true,
   "version": "0.1.0",
+  "scripts": {
+    "test": "coffee test.coffee"
+  },
   "dependencies": {
+    "coffee-script": "1.7.x",
     "cli-table": "0.3.x",
     "lodash": "2.4.x",
     "function-to-string": "0.2.x"
