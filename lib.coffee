@@ -5,6 +5,7 @@ functionToString = require 'function-to-string'
 module.exports = (variables, expressions) ->
 
   expressionStrings = expressions.map (e) ->
+    return e.outputName if e.outputName
     parsed = functionToString(e)
     cleanedBody = parsed.body.replace(/\s/g, '')
     cleanedBody = cleanedBody.replace(/^return/g, '')
